@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="bg-slate-50 h-screen">
         <Outlet />
       </main>
     </>
