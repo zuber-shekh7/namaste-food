@@ -12,8 +12,8 @@ import LinkItem from "./LinkItem";
 
 const Navbar = () => {
   return (
-    <nav className="container-full mx-auto px-6 py-3 shadow-lg">
-      <section className="flex justify-between items-center">
+    <nav className="bg-white shadow-md">
+      <section className="container mx-auto flex justify-between items-center py-3">
         <section>
           <LinkItem to="/">
             <IoFastFood className="h-12 w-12 bg-orange-600 text-white rounded-xl p-2" />
