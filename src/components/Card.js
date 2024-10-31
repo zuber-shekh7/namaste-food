@@ -7,7 +7,7 @@ const Card = ({ info }) => {
   const { areaName, avgRating, cloudinaryImageId, cuisines, name, sla } = info;
 
   return (
-    <section className="mr-6 min-w-72 rounded-lg">
+    <section className="mr-6 mb-6 min-w-72 rounded-lg hover:cursor-pointer">
       <section>
         <img
           className="object-cover h-48 w-full rounded-xl"

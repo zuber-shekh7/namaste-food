@@ -4,10 +4,11 @@ import RestaurantList from "../containers/RestaurantList";
 import Title from "../components/Title";
 
 import { getRestaurants } from "../apis/restaurants";
+import RestaurantListShimmer from "../containers/shimmers/RestaurantListShimmer";
 
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -26,8 +27,14 @@ const Home = () => {
   return (
     <section className="mt-6">
       <section>
-        <Title className="mb-6">Top restaurant chains</Title>
-        <RestaurantList restaurants={restaurants} />
+        {isLoading ? (
+          <RestaurantListShimmer />
+        ) : (
+          <>
+            <Title className="mb-6">Top restaurant chains</Title>
+            <RestaurantList restaurants={restaurants} />
+          </>
+        )}
       </section>
     </section>
   );

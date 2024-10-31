@@ -6,10 +6,10 @@ export const getRestaurants = async ({ lat, lng }) => {
     const response = await fetch(url);
     const json = await response.json();
 
-    return json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    return json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
       ?.restaurants;
   } catch (error) {
     console.error("Failed to feth restaurants: ", error);
-    throw new Error(error);
+    return [];
   }
 };
