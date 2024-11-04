@@ -7,6 +7,7 @@ import App from "./App";
 import Home from "./pages/Home.page";
 import About from "./pages/About.page";
 import NotFound from "./pages/NotFound.page";
+import Search from "./pages/Search.page";
 
 import store from "./store";
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
       {
         path: "*",

@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="mt-6">
+    <section>
       <section>
         {isLoading ? (
           <RestaurantListShimmer />

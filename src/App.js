@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <main className=" min-h-screen mx-auto container">
+      <main className="min-h-screen mx-auto container mt-6">
         <Outlet />
       </main>
     </>
