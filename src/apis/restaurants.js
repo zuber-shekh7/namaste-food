@@ -29,3 +29,19 @@ export const searchRestaurantsAndFood = async ({ lat, lng, searchTerm }) => {
     return [];
   }
 };
+
+export const getRestaurantInfo = async ({ lat, lng, restaurantId }) => {
+  try {
+    const url = `${SWIGGY_API_URL}/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&restaurantId=${restaurantId}&catalog_qa=undefined&submitAction=ENTER`;
+    const response = await fetch(url);
+    const json = await response.json();
+    const info = json?.data?.cards[2]?.card?.card?.info;
+    const offers =
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
+
+    return { info, offers };
+  } catch (error) {
+    console.error("Failed to get restaurant info: ", error);
+    return [];
+  }
+};

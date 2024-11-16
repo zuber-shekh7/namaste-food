@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.page";
 import Search from "./pages/Search.page";
 
 import store from "./store";
+import Restaurant from "./pages/Restaurant.page";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/restaurant/:restaurantId",
+        element: <Restaurant />,
       },
       {
         path: "*",
